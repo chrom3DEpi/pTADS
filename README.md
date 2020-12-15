@@ -1,9 +1,9 @@
 pTADS
 # Introduction
-pTADS(prediction of TAD boundary and strength) is a method to evaluate the performance of histone and transcription factor information in predicting the TAD boundaries and boundary strength across multiple cell lines. The pTADS method is consisted of random forest models to predict the TAD boundary and lasso based boundary score to characterize the TAD boundary strength, which is independent of the interaction matrix information of Hi-C.
+The pTADS(prediction of TAD boundary and strength) method can simultaneously predict the TAD boundary and characterize the boundary strength across multiple cell lines by integrating sequence and epigenetic profile information such as histone and transcription factor binding information. The pTADS method is consisted of random forest models to predict the TAD boundary and lasso based boundary score to characterize the TAD boundary strength, which is independent of the contact matrix-based interaction matrix information of Hi-C.
 
 # How to run it ?
-pTADS is developed in R and can be downloaded from https://github.com/YunlongWang-ylw/pTADS. This repository contains scripts,examples and required packages for pTADS.
+The pTADS is developed in R and can be downloaded from https://github.com/YunlongWang-ylw/pTADS. This repository contains scripts,examples and required packages for pTADS.
 
 Scripts:
 
@@ -20,18 +20,18 @@ When you run the program, please Follow the README.txt in the ./pTADS directory.
 # Required data
 To run pTADS, the following data should be prepared:
 
--m  the model of Random forest have been trained, Stored in an *.RData file 
+-m  the pre-trained model of Random forest in  *.RData file 
 
--c  LASSO coefficients of key features,Stored in an *.RData file 
+-c  the coefficients for importance features in LASSO function in *.RData file
 
 -d  Matrix data containing sample features (warning: The input matrix data, feature ID name and order shall be consistent with the matrix data in the example). 
 
 # Example use: 
 input file：
 
-./model/GM12878_model.RData  ： The RF model of GM12878 training
+./model/GM12878_model.RData  ： The pre-trained random forest model for GM12878 cell line
 
-./model/GM12878_coeff1.RData :  LASSO coefficients of key features
+./model/GM12878_coeff1.RData :  he coefficients for features in LASSO function for GM12878 cell line
 
 ./example/test.chr1.40M_60M.matrix.txt    ：Matrix data containing key features
 
@@ -39,11 +39,11 @@ parameter：
 
 Rscript ./Scripts/run_pTADS.ori.R -h
 
- -m : The RF model of GM12878 training
+ -m : the pre-trained model of Random forest
   
- -c : LASSO coefficients of key features
+ -c : the coefficients for importance features in LASSO function
   
- -d : Matrix data containing key features
+ -d : Matrix data containing importance features
  
  -w : Defines the size of the sliding window .(example: -win 10 ,represent the 10 bins)
  
