@@ -31,9 +31,10 @@ input file：
 
 ./model/GM12878_model.RData  ： The pre-trained random forest model for GM12878 cell line
 
-./model/GM12878_coeff1.RData :  he coefficients for features in LASSO function for GM12878 cell line
+./model/GM12878_coeff1.RData :  The coefficients for features in LASSO function for GM12878 cell line
 
-./example/test.chr1.40M_60M.matrix.txt    ：Matrix data containing key features
+./example/test.chr1.40M_60M.matrix.txt    ：The pre-calculated features of sequence and epigenetic profile information such as histone and 
+  transcription factor binding information for the pre-trained model of Random forest and LASSO function
 
 parameter：
 
