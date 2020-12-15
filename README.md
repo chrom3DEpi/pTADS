@@ -64,7 +64,7 @@ Rscript ./Scripts/run_pTADS.ori.R -m ./model/GM12878_model.RData -c ./model/GM12
 
 two result files:
 
-*.predicted.TAD_boundary.* :  TAD boundaries are predicted
+*.predicted.TAD_boundary.* :  pTADS predicted results
 
 *.RF_BSSM.*    ： inclued the model prediction results of each sample,TAD boundary strength,Optimized Boundary Score judgment results,pTADS predicted results
 
