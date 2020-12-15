@@ -12,7 +12,7 @@ Scripts:
 
 packages:
 
-  Rscript, ggplot2, randomForest, caret, PRROC, pROC;
+  Rscript, ggplot2, randomForest, caret, PRROC, pROC, getopt;
   
   
 When you run the program, please Follow the README in the ./test directory.
