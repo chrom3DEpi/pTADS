@@ -20,9 +20,9 @@ When you run the program, please Follow the README in the ./test directory.
 # Required data
 To run pTADS, the following data should be prepared:
 
--i1  the model of Random forest have been trained, Stored in an *.RData file 
+-m  the model of Random forest have been trained, Stored in an *.RData file 
 
--i2  Matrix data containing sample features (warning: The input matrix data, feature ID name and order shall be consistent with the matrix data in the example). 
+-d  Matrix data containing sample features (warning: The input matrix data, feature ID name and order shall be consistent with the matrix data in the example). 
 
 # Example use: 
 input file：
@@ -33,22 +33,27 @@ input file：
 
 parameter：
 
-Rscript ./Scripts/run_pTADS.ori.R -help
+Rscript ./Scripts/run_pTADS.ori.R -h
 
--win : Defines the size of the sliding window, the number of bin.(example: -win 10 ,represent the 10 bins)
-
--slide  ：Defines the window slide distance.(example: -slide 1, represent the 1 bin)
-
--spar： The smooth parameters of the curve are between 0 and 1
-
--res ： the size of bin, Match the size of the input matrix sample.(example: -res 100000, represent the 1 bin) 
-
--o : Output directory
+ -m : The RF model of GM12878 training, as well as the LASSO coefficients of key features
+ 
+ -d : Matrix data containing key features
+ 
+ -w : Defines the size of the sliding window, the number of bin.(example: -win 10 ,represent the 10 bins)
+ 
+ -s  ：Defines the window slide distance.(example: -slide 1, represent the 1 bin)
+ 
+ -p： The smooth parameters of the curve are between 0 and 1
+ 
+ -r ： the size of bin, Match the size of the input matrix sample.(example: -res 100000, represent the 1 bin)  
+ 
+ -o : Output directory
+ 
 
 
 use:
 
-Rscript ./Scripts/run_pTADS.ori.R -i1 ./model/GM12878.Pred.tP.score.2020.1.10.RData -i2 ./example/test.chr1.40M_60M.matrix.txt -win 10 -slide 1 -spar 0.5 -res 100000 -o Results
+Rscript ./Scripts/run_pTADS.ori.R -m ./model/GM12878.Pred.tP.score.2020.1.10.RData -d ./example/test.chr1.40M_60M.matrix.txt -w 10 -s 1 -p 0.5 -r 100000 -o Results
 
 two result files:
 
