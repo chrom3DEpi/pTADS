@@ -46,9 +46,9 @@ Rscript ./Scripts/run_pTADS.ori.R -h
   
  -d : Matrix data containing importance features
  
- -w : Defines the size of the sliding window .(example: -win 10 ,represent the 10 bins)
+ -w : Defines the size of the window .(example: -win 10 ,represent the 10 bins)
  
- -s  ：Defines the window slide distance.(example: -slide 1, represent the 1 bin)
+ -s  ：Defines the window sliding distance.(example: -slide 1, represent the 1 bin)
  
  -p： The smooth parameters of the curve are between 0 and 1
  
