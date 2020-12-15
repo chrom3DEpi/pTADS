@@ -22,23 +22,35 @@ To run pTADS, the following data should be prepared:
 
 # Example use: 
 input file：
+
 ./model/GM12878.Pred.tP.score.2020.1.10.RData  ： The RF model of GM12878 training, as well as the LASSO coefficients of key features
+
 ./example/test.chr1.40M_60M.matrix.txt    ：Matrix data containing key features
 
 parameter：
+
 Rscript ./Scripts/run_pTADS.ori.R -help
+
 -win : Defines the size of the sliding window, the number of bin.(example: -win 10 ,represent the 10 bins)
+
 -slide  ：Defines the window slide distance.(example: -slide 1, represent the 1 bin)
+
 -spar： The smooth parameters of the curve are between 0 and 1
--res ： the size of bin, Match the size of the input matrix sample.(example: -res 100000, represent the 1 bin)  
+
+-res ： the size of bin, Match the size of the input matrix sample.(example: -res 100000, represent the 1 bin) 
+
 -o : Output directory
+
 
 use:
 Rscript ./Scripts/run_pTADS.ori.R -i1 ./model/GM12878.Pred.tP.score.2020.1.10.RData -i2 ./example/test.chr1.40M_60M.matrix.txt -win 10 -slide 1 -spar 0.5 -res 100000 -o Results
 
 two result files
+
 *.predicted.TAD_boundary.* :  TAD boundaries are predicted
+
 *.RF_BSSM.*    ： inclued the model prediction results of each sample,TAD boundary strength,Optimized Boundary Score judgment results,pTADS predicted results
+
 
 
 Contacct us
