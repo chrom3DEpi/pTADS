@@ -45,13 +45,13 @@ Rscript ./Scripts/run_pTADS.ori.R -h
   
  -d : Matrix data containing key features
  
- -w : Defines the size of the sliding window, the number of bin.(example: -win 10 ,represent the 10 bins)
+ -w : Defines the size of the sliding window .(example: -win 10 ,represent the 10 bins)
  
  -s  ：Defines the window slide distance.(example: -slide 1, represent the 1 bin)
  
  -p： The smooth parameters of the curve are between 0 and 1
  
- -r ： the size of bin, Match the size of the input matrix sample.(example: -res 100000, represent the 1 bin)  
+ -r ： the size of bin, Match the size of the input matrix sample.(example: -res 100000, represent the 100kbp,equal 1 bin here)  
  
  -o : Output directory
  
