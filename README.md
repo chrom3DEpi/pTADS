@@ -8,7 +8,7 @@ pTADS is developed in R and can be downloaded from https://github.com/YunlongWan
 Scripts:
 
   run_pTADS.ori.R ;
-  varSelRF.R ;
+
 
 packages:
 

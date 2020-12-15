@@ -10,8 +10,9 @@ library(pROC)
 
 command=matrix(c( 
   'help', 'h', 0,'logical', 'Help document',
-  'file1', 'm', 1,'character', 'The RF model of cell training, as well as the LASSO coefficients of key features',
-  'file2', 'd', 1, 'character', 'Matrix data containing key features',
+  'file1', 'm', 1,'character', 'The RF model of cell training',
+  'file2', 'c', 1,'character', 'LASSO coefficients of key features',
+  'file3', 'd', 1, 'character', 'Matrix data containing key features',
   'win', 'w', 1, 'numeric', 'Defines the size of the sliding window, the number of bin.(example: -win 10 ,represent the 10 bins)',
   'slide', 's', 1, 'numeric', 'Defines the window slide distance.(example: -slide 1, represent the 1 bin)',
   'spar', 'p', 1, 'numeric', 'The smooth parameters of the curve are between 0 and 1',
@@ -21,7 +22,7 @@ command=matrix(c(
   
 args=getopt(command)
  
-if (!is.null(args$help) || is.null(args$file1) || is.null(args$file2) || is.null(args$win) || is.null(args$slide) || is.null(args$spar) || is.null(args$res) || is.null(args$output)) {
+if (!is.null(args$help) || is.null(args$file1) || is.null(args$file2) || is.null(args$file3) ||is.null(args$win) || is.null(args$slide) || is.null(args$spar) || is.null(args$res) || is.null(args$output)) {
   cat(paste(getopt(command, usage = T), "\n"))
   q(status=1)
 }
@@ -37,7 +38,7 @@ if (!is.null(args$help) || is.null(args$file1) || is.null(args$file2) || is.null
 #ress<- args[5];
 #outfilee<-args[6]; ## 
 
-inputfile<-args$file2; # test.chr1.40M_60M.matrix.txt
+inputfile<-args$file3; # test.chr1.40M_60M.matrix.txt
 winn <- args$win;
 sidee<- args$slide;
 sparr<-args$spar;
@@ -51,6 +52,10 @@ ress<-as.numeric(as.character(ress))
 
 ########### step1: 读取测试文件
 load(args$file1)
+model<-model 
+load(args$file2)
+coeff1<-coeff1
+
 # 提供 RF预测模型，  model
 # 筛选特征拟合的lasso系数： coeff1+ nam 
 # 

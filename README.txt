@@ -7,8 +7,8 @@ pTADS is developed in R and can be downloaded from https://github.com/YunlongWan
 
 Scripts:
   run_pTADS.ori.R ;
-  varSelRF.R ;
 
+  
 packages:
   Rscript, ggplot2, randomForest, caret, PRROC, pROC;
   
@@ -16,14 +16,17 @@ When you run the program, please Follow the README in the ./test directory.
 
 # Required data
 To run pTADS, the following data should be prepared:
--i1  the model of Random forest have been trained, Stored in an *.RData file 
-
--i2  Matrix data containing sample features (warning: The input matrix data, feature ID name and order shall be consistent with the matrix data in the example). 
+-m  the model of Random forest have been trained, Stored in an *.RData file 
+-c  LASSO coefficients of key features,Stored in an *.RData file 
+-d  Matrix data containing sample features (warning: The input matrix data, feature ID name and order shall be consistent with the matrix data in the example). 
 
 # Example use: 
 
 ## input file：
-./model/GM12878.Pred.tP.score.2020.1.10.RData  ： The RF model of GM12878 training, as well as the LASSO coefficients of key features
+./model/GM12878_model.RData  ： The RF model of GM12878 training
+
+./model/GM12878_coeff1.RData :  LASSO coefficients of key features
+
 ./example/test.chr1.40M_60M.matrix.txt    ：Matrix data containing key features
 
 ## Scripts：
@@ -31,7 +34,8 @@ run_pTADS.ori.R ：TAD boundary prediction is performed for input matrix data
 
 ## parameter：
 Rscript ./Scripts/run_pTADS.ori.R -h
-# -m : The RF model of GM12878 training, as well as the LASSO coefficients of key features
+# -m : The RF model of GM12878 training
+# -c : LASSO coefficients of key features
 # -d : Matrix data containing key features
 # -w : Defines the size of the sliding window, the number of bin.(example: -win 10 ,represent the 10 bins)
 # -s  ：Defines the window slide distance.(example: -slide 1, represent the 1 bin)
@@ -40,7 +44,7 @@ Rscript ./Scripts/run_pTADS.ori.R -h
 # -o : Output directory
 
 ## Example use:
-Rscript ./Scripts/run_pTADS.ori.R -m ./model/GM12878.Pred.tP.score.2020.1.10.RData -d ./example/test.chr1.40M_60M.matrix.txt -w 10 -s 1 -p 0.5 -r 100000 -o Results
+Rscript ./Scripts/run_pTADS.ori.R -m ./model/GM12878_model.RData -c ./model/GM12878_coeff1.RData -d ./example/test.chr1.40M_60M.matrix.txt -w 10 -s 1 -p 0.5 -r 100000 -o Results
 
 
 ## two result files
