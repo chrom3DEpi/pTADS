@@ -15,7 +15,7 @@ packages:
   Rscript, ggplot2, randomForest, caret, PRROC, pROC, getopt;
   
   
-When you run the program, please Follow the README in the ./test directory.
+When you run the program, please Follow the README.txt in the ./pTADS directory.
 
 # Required data
 To run pTADS, the following data should be prepared:
