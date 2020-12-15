@@ -24,7 +24,7 @@ To run pTADS, the following data should be prepared:
 
 -c  the coefficients for importance features in LASSO function in *.RData file
 
--d  Matrix data containing sample features (warning: The input matrix data, feature ID name and order shall be consistent with the matrix data in the example). 
+-d: the pre-calculated features of sequence and epigenetic profile information for each sample in matrix format. (It should be noted that the input matrix sample must be in the same feature order with the given example).
 
 # Example use: 
 input file：
@@ -44,15 +44,15 @@ Rscript ./Scripts/run_pTADS.ori.R -h
   
  -c : the coefficients for importance features in LASSO function
   
- -d : Matrix data containing importance features
+ -d : the pre-calculated features for each sample in matrix format.
  
- -w : Defines the size of the window .(example: -win 10 ,represent the 10 bins)
+ -w : the size of the sliding window.(for example: -win 10 ,represent the 10 bins)
  
- -s  ：Defines the window sliding distance.(example: -slide 1, represent the 1 bin)
+ -s ：the step of sliding windows across the whole genome.(for example: -slide 5, represent the 5 bins interval for adjacent regions)
  
- -p： The smooth parameters of the curve are between 0 and 1
+ -p ：the smooth parameters for the optimized TAD boundary scores which it is between 0 and 1, default value is 0.5
  
- -r ： the size of bin, Match the size of the input matrix sample.(example: -res 100000, represent the 100kbp,equal 1 bin here)  
+ -r ： the resultion of bins which is consistent with the resultion of the input samples.(example: -res 100000, represent the 100kbp,equal 1 bin here)  
  
  -o : Output directory
  
