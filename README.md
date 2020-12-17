@@ -48,4 +48,3 @@ Result files:
 .RF_BSSM： the prediction results for each sample which include TAD boundary strength, optimized Boundary Score and pTADS predicted results
 
 If you have any questions or suggestions, please contacct us by email to Yunlong Wang(yunlong@webmail.hzau.edu.cn) or Yaping Fang (ypfang@mail.hzau.edu.cn) or Guoliang Li(guoliang.li@mail.hzau.edu.cn).
-
