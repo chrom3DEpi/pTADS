@@ -56,22 +56,6 @@ intersectBed -a Results.chr1.predicted.TAD_boundary.10.1.0.5.bed -b chr1.40M_60M
 
 # The prediction accuracy
 awk '{print $2}' chr1.40M_60M.TAD.boundary.overlap1.txt |sort |uniq |wc -l
-#  21/21
+
 # The ratio of correctly predicted TAD boundaries
 awk '{print $5}' chr1.40M_60M.TAD.boundary.overlap1.txt |sort |uniq |wc -l
-#  28/41
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
